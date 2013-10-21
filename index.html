@@ -1,0 +1,525 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+        <meta charset="UTF-8">
+        <title>pure CSS3 - Bender</title>
+<style type="text/css">
+
+@-webkit-keyframes flame { /* flame pulses */
+    0% {
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 10px #ff2b15,
+        inset -2px -2px 20px #451b0e
+    }50%{
+        background-color: #c43400;
+        box-shadow:
+        inset -5px 0px 10px #ff2b15,
+        inset -2px -2px 20px #451b0e;
+    }100%{
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 10px #ff2b15,
+        inset -2px -2px 20px #451b0e;
+    }
+}
+
+body {
+        margin:0;
+        padding:0;
+        background: #fff;
+}
+
+
+.bender{
+    width: 164px;
+    margin: 105px auto 0 auto;
+}
+
+.antenna{
+    width: 0;
+    height: 0;
+    border: 13px  solid transparent;
+    border-top-width: 0;
+    border-bottom: 104px solid #000;
+    position: relative;
+    margin: 0 auto;
+}
+
+.antenna:before{
+    content:"";
+    display: block;
+    width: 0px;
+    height: 0;
+    border: 8px  solid transparent;
+    border-top-width: 0;
+    border-bottom: 82px solid #f8f7fc;
+    position: absolute;
+    left: -8px;
+    top: 10px;
+}
+
+.antenna:after{
+    content:"";
+    display: block;
+    width: 0px;
+    height: 0;
+    border: 5px  solid transparent;
+    border-top-width: 0;
+    border-bottom: 81px solid #aebcc7;
+    position: absolute;
+    left: -5px;
+    top: 10px;
+
+    
+}
+
+.antenna .ball{
+    content:"";
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 13px;
+    background-color: #a6c0cd;
+    border: 4px solid #000000;
+    position: absolute;
+    left: -13px;
+    top: 0;
+    box-shadow: inset 0 3px 0 #fbffff;
+    z-index: 2;
+}
+
+.antenna .support{
+    width: 40px;
+    height: 40px;
+    background-color: #fefefe;
+    border-radius: 50%;
+    position: absolute;
+    left: -25px;
+    top: 90px;
+    border: 5px solid #000;
+    z-index: 10;
+}
+
+.antenna .support:after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 19px;
+    background-color: #acbec8;
+    border-radius:50%;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+
+.head{
+    width: 154px;
+    height: 305px;
+    border: 4px solid #000;
+    border-radius: 77px 77px 0px 0px;
+    position: relative;
+    z-index: 11;
+    background-color: #fefefc;     
+    position: relative;
+}
+
+.head:after{
+    content:"";
+    display: block;
+    width: 128px;
+    height: 302px;
+    border-radius: 77px 77px 0px 0px;
+    position: relative;
+    background-color: #a2b8c5;
+    position: absolute;
+    left: 13px;
+    top: 3px;
+}
+
+.eyes-wrapper{
+    width: 220px;
+    background-color: #fcfcfc;
+    height: 88px;
+    border: 7px solid #000;
+    position: relative;
+    z-index: 1;
+    border-radius: 50px; 
+    margin-left: -40px;
+    margin-top: 105px;
+    position: relative;
+}
+
+.eyes-wrapper:after{
+    content: "";
+    display: block;
+    width: 161px;
+    height: 88px;
+    background-color: #b2c4c8;
+    position: absolute;
+    border-radius: 20px; 
+    top: 0;
+    left: 30px;
+    
+}
+
+.eyes{
+    background-color: #000;
+    width: 205px;
+    height: 71px;
+    position: relative;
+    z-index: 1;
+    margin-top: 8px;
+    margin-left: 7px;
+    border-radius: 30px;
+
+}
+
+.eyes:after{
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    
+    border: 32px solid transparent;
+    border-top: 24px solid #000;
+    margin-left: 70px;
+    position: relative;
+    z-index: 3;
+
+}
+
+
+.eyes .eye{
+    background-color: #f9f88e;
+    width: 78px;
+    height: 67px;
+    border-radius: 29px 29px 29px 29px;
+    float: left;
+    margin-top: 2px;
+    box-shadow: inset 0px 5px 0 rgba(0,0,0,0.2);
+}
+
+.eyes .eye:after{
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #000;
+    margin-top: 25px;
+}
+
+.eyes .eye-left{
+    margin-left: 20px;
+}
+
+.eyes .eye-left:after{
+    margin-left: 26px;
+}
+
+.eyes .eye-right{
+    margin-left: 9px;
+}
+
+.eyes .eye-right:after{ 
+    margin-right: 24px;
+    float: right;
+}
+
+
+.mouth{
+    background-color: #000;
+    width: 142px;
+    height: 65px;
+    z-index: 1;
+    position: relative;
+    margin-left: 7px;
+    margin-top: 16px;
+    border-radius: 25px;
+}
+
+
+.mouth:before{
+    content:"";
+    display: block;
+    background-color: #a2b8c5;
+    height: 10px;
+    border-radius: 50% ;
+    position: absolute;
+    width: 118px;
+    margin-left: 12px;
+    z-index: 10;
+    top: -5px;   
+    float: left;
+
+}
+
+
+
+.mouth:after{
+    content:"";
+    display: block;
+    /*background-color: #f00;*/
+    background-color: #000;
+    height:10px;
+    width: 109px;
+    border-radius: 50% ;
+    position: absolute;
+    z-index: 1;
+    left: 17px;
+    top: 58px;   
+    float: left;
+}
+
+.teeth{
+
+    content: "";
+    display: block;
+    background-color: #f5f595;
+    
+    background-image: linear-gradient(to right, #000 3px, transparent 1px);
+    background-position: top center;
+    background-size: 23px;
+    
+    box-shadow: inset 0px 7px 0px rgba(0,0,0,0.2);
+
+    width: 128px;
+    height: 56px;
+    position: relative;
+    margin-left: 7px;
+    margin-top: 4px;
+    float: left;
+    border-radius: 25px;
+    z-index: 5;
+    position: relative;
+}
+
+.teeth:before{
+    content:"";
+    display: block;
+    background-color: #000;    
+    width: 110px;
+    height: 10px;
+    border-radius: 50% ;
+    position: absolute;
+    left: 12px;    
+    top: -5px;   
+    float: left;
+}
+.teeth:after{
+    top: 0;
+    content:"";
+    display: block;
+    background-color: #f5f595;
+    background-image: linear-gradient(to right, #000 3px, transparent 1px);
+    background-position: top center;
+    background-size: 23px;
+    height: 10px;
+    border-radius: 50% ;
+    position: absolute;
+    width: 104px;
+    left: 12px;
+    top: 47px;   
+    float: left;
+}
+
+
+.tooth-row{
+    width: 132px;
+    height: 20px;
+    border-bottom: 3px solid #000;
+    border-radius: 50%;
+}
+
+.cigar-wrapper{
+    z-index: 12;
+    position: absolute;
+    left: 75px;
+    top: 15px;
+    -webkit-transform:rotate(-4deg);
+    -moz-transform:rotate(-4deg);
+    -0-transform:rotate(-4deg);
+    transform:rotate(-4deg);
+
+}
+
+.cigar{
+    width: 120px;
+    height: 30px;
+    background-image: linear-gradient( #593d1b , #664620);
+    border: 2px solid #000;
+    position: absolute;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.cigar .detail{
+
+    width: 35px;
+    height: 20px;
+    background-color: #ad9e62;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #000;
+    position: relative;
+    left: 10px;
+    top: -8px;
+
+}
+
+.cigar .detail:before{
+    content: "";
+    display: block;
+    background-color: #2e3f0e;
+    width: 21px;
+    height: 11px;
+    position: absolute;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    border: 2px solid #000;
+}
+.cigar .detail:after{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 29px;
+    background-color: #ad9e62; 
+    background-image: linear-gradient(to bottom, #ad9d62 11px, #4c3318);
+    background-position: top left;
+    border: 2px solid #000;
+    border-top: 0;
+    -webkit-border-radius:0 ;
+    -moz-border-radius:0 ;
+    -o-border-radius:0 ;
+    border-radius:0 ;
+    position: absolute;
+    top: 19px;
+    left: 15px;
+    
+    -webkit-transform: skew(15deg, 0deg);
+    -moz-transform: skew(15deg, 0deg);
+    -ms-transform: skew(15deg, 0deg);
+    -o-transform: skew(15deg, 0deg);
+    transform: skew(15deg, 0deg) ;
+
+
+
+
+}
+
+.cigar .tip{
+        
+    width: 35px;
+    float: right;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+}
+
+
+
+.cigar .tip:before{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #424041;
+    margin-top: -6px;
+    margin-left: 1px;
+    border: 2px solid #000;
+    -webkit-transform: rotate(15deg); /* Safari and Chrome */
+    -moz-transform: rotate(15deg); /* Safari and Chrome */
+    -ms-transform: rotate(15deg); /* IE 9 */
+    -o-transform: rotate(15deg); /* IE 9 */
+    transform: rotate(15deg);
+}
+
+
+
+
+ .flame{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 29px;
+    border-radius: 50% 45%;
+    border: 2px solid #000;
+    background-color: #863517;
+    border-right: 0;
+    top: 1px;
+    left: 101px;
+    -webkit-animation:flame 5s infinite;
+    -moz-animation:flame 5s infinite;
+    -ms-animation:flame 5s infinite;
+    -o-animation:flame 5s infinite;
+    animation:flame 5s infinite;
+    
+}
+
+
+.author{
+    font-family: Arial, Tahoma;
+    font-size: 12px;
+    text-align: center;
+}
+.author a{
+    color: #000;
+    text-decoration: none;
+}
+
+
+</style>
+</head>
+<body>
+     <div class="bender">
+        <div class="antenna">
+            <div class="ball"></div>
+            <div class="support"></div>
+        </div>        
+        <div class="head">
+            <div class="eyes-wrapper">
+                <div class="eyes">
+                    <div class="eye eye-left"></div>
+                    <div class="eye eye-right"></div>
+                </div>
+            </div>
+            <div class="mouth">
+                <div class="teeth">
+                    <div class="cigar-wrapper">
+                        <div class="cigar">
+                            <div class="detail"></div>
+                            <div class="tip">
+                            </div>
+                        </div>
+                        <div class="flame"></div>
+                        
+                    </div>
+                    <div class="tooth-row"></div>
+                    <div class="tooth-row"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+       
+        <!-- author -->
+        <p class="author">
+            <a href="http://www.facebook.com/viniciusdacal" target="_blank">
+                Vinicius Dacal Lopes
+            </a>
+        </p>
+</body>
+</html>
