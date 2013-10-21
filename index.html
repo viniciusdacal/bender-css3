@@ -5,29 +5,148 @@
         <title>pure CSS3 - Bender</title>
 <style type="text/css">
 
-@-webkit-keyframes flame { /* flame pulses */
+@-webkit-keyframes flame {
     0% {
         background-color: #863517;
         box-shadow:
-        inset -5px 0px 10px #ff2b15,
-        inset -2px -2px 20px #451b0e
+        inset -5px 0px 20px #ff2b15,
+       
     }50%{
         background-color: #c43400;
         box-shadow:
-        inset -5px 0px 10px #ff2b15,
-        inset -2px -2px 20px #451b0e;
+        inset -5px 0px 20px #ff2b15,
+       
     }100%{
         background-color: #863517;
         box-shadow:
-        inset -5px 0px 10px #ff2b15,
-        inset -2px -2px 20px #451b0e;
+        inset -5px 0px 20px #ff2b15,       
+    }
+}
+
+@-moz-keyframes flame {
+    0% {
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,
+       
+    }50%{
+        background-color: #c43400;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,
+       
+    }100%{
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,       
+    }
+}
+
+@-ms-keyframes flame {
+    0% {
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,
+       
+    }50%{
+        background-color: #c43400;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,
+       
+    }100%{
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,       
+    }
+}
+
+@-o-keyframes flame {
+    0% {
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,
+       
+    }50%{
+        background-color: #c43400;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,
+       
+    }100%{
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,       
+    }
+}
+
+@keyframes flame {
+    0% {
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,
+       
+    }50%{
+        background-color: #c43400;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,
+       
+    }100%{
+        background-color: #863517;
+        box-shadow:
+        inset -5px 0px 20px #ff2b15,       
+    }
+}
+
+@-webkit-keyframes blinkeyes {
+    0%,50% {
+        height: 0;
+    }53%{
+        height: 60%;
+    }56%{
+       height: 0;
+    }
+}
+@-moz-keyframes blinkeyes {
+    0%,50% {
+        height: 0;
+    }53%{
+        height: 60%;
+    }56%{
+       height: 0;
+    }
+}
+@-ms-keyframes blinkeyes {
+    0%,50% {
+        height: 0;
+    }53%{
+        height: 60%;
+    }56%{
+       height: 0;
+    }
+}
+@-o-keyframes blinkeyes {
+    0%,50% {
+        height: 0;
+    }53%{
+        height: 60%;
+    }56%{
+       height: 0;
+    }
+}
+
+@keyframes blinkeyes {
+    0%,50% {
+        height: 0;
+    }53%{
+        height: 60%;
+    }56%{
+       height: 0;
     }
 }
 
 body {
-        margin:0;
-        padding:0;
-        background: #fff;
+    margin:0;
+    padding:0;
+    background-color: #ddd;
+       
 }
 
 
@@ -172,6 +291,7 @@ body {
     margin-top: 8px;
     margin-left: 7px;
     border-radius: 30px;
+    overflow: hidden;
 
 }
 
@@ -225,6 +345,39 @@ body {
     margin-right: 24px;
     float: right;
 }
+
+.eyelids{
+    
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+}
+
+.eyelids .eyelid{
+    background-color: #000;
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    -webkit-animation:blinkeyes 8s infinite;
+    -moz-animation:blinkeyes 8s infinite;
+    -ms-animation:blinkeyes 8s infinite;
+    -o-animation:blinkeyes 8s infinite;
+    animation:blinkeyes 8s infinite;
+    -webkit-box-shadow: 0 10px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 10px 0 rgba(0,0,0,0.2);
+
+}
+
+.eyelids .eyelid-top{
+    top: 0;
+}
+.eyelids .eyelid-bottom{
+    bottom: 0;
+}
+
+
 
 
 .mouth{
@@ -470,14 +623,26 @@ body {
 
 .author{
     font-family: Arial, Tahoma;
-    font-size: 12px;
-    text-align: center;
+    font-size: 14px;
+    text-align: left;
+    position: absolute;
+    bottom:30px;
+    right: 30px;
+    font-weight: bold;    
+
 }
 .author a{
     color: #000;
     text-decoration: none;
+    margin-bottom: 5px;
+    float: left;
 }
 
+.author a:hover{
+    text-shadow:1px 1px 0 #fff;
+    color: #222;
+
+}
 
 </style>
 </head>
@@ -492,6 +657,10 @@ body {
                 <div class="eyes">
                     <div class="eye eye-left"></div>
                     <div class="eye eye-right"></div>
+                    <div class="eyelids">
+                        <div class="eyelid eyelid-top"></div>
+                        <div class="eyelid eyelid-bottom"></div>
+                    </div>
                 </div>
             </div>
             <div class="mouth">
@@ -519,6 +688,13 @@ body {
         <p class="author">
             <a href="http://www.facebook.com/viniciusdacal" target="_blank">
                 Vinicius Dacal Lopes
+            </a><br>
+            <a href="https://twitter.com/vinicius_dacal">
+                @vinicius_dacal
+                
+            </a><br>
+            <a href="https://github.com/viniciusdacal/bender-css3">
+                GitHub
             </a>
         </p>
 </body>
